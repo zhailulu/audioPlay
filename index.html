@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//res.wx.qq.com" rel="dns-prefetch">
+    <link href="//hm.baidu.com" rel="dns-prefetch">
+    <title>语音播放器</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/audio.css">
+</head>
+<body>
+
+  <!-- 发现精彩 start-->
+  <div class="audio-box">
+               <audio id="music" preload="metadata" autoplay="false">
+                   <source src="${item.info.voicefilepath}" type="audio/mpeg">
+                   浏览器不支持audio
+               </audio>
+               <canvas id="canvas" class="canvas-play" style="display:none;"></canvas>
+  </div>
+  <!-- 发现精彩 end-->
+
+  <!--js start-->
+  <script src="lib/zepto.min.js"></script>
+  <script src="js/audioPlay.js"></script>
+  <script>
+    (function(){
+        var option = {
+            canvasId : "canvas",
+            playClass : "canvas-play",
+            pauseClass : "canvas-pause"
+        };
+
+        $("#music").audioPlay(option);
+    })();
+  </script>
+  <!--js end-->
+</body>
+</html>
